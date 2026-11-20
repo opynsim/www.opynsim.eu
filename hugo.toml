@@ -1,0 +1,43 @@
+baseurl = "http://www.opynsim.eu"
+title = "OPynSim"
+theme = "opynsim-theme"
+languagecode = "en-us"
+defaultcontentlanguage = "en"
+
+[pagination]
+pagerSize = 20
+
+[params]
+#  banner_title = "OPynSim"
+  banner_icon = "img/opynsim_logo.svg"
+  github_url = "https://github.com/opynsim/opynsim"
+  download_url = "https://docs.opynsim.eu/manual/en/latest/getting-started/installation.html"
+  admin_url = "https://github.com/opynsim/opynsim-administration"
+  copyright_string = "© 2026, All Rights Reserved"
+  footer_string = '''
+  OPynSim is developed by the <a href="https://www.tudelft.nl/3me/over/afdelingen/biomechanical-engineering">Biomechanical Engineering</a> department at <a href="https://www.tudelft.nl/">TU Delft</a>. It is funded through 2026-2028 by <a href="https://www.openscience.nl/">Open Science NL</a> through its "Open Science Infrastructure" grant call (<a href="https://doi.org/10.61686/KYYRQ22856">NWO project page</a>, <a href="https://www.openscience.nl/en/news/45-projects-strengthen-dutch-open-science-infrastructure">announcement</a>). You can read the project's proposal on <a href="https://doi.org/10.5281/zenodo.19493285">Zenodo</a>.
+'''
+
+  [[params.sponsors]]
+    url = "https://www.tudelft.nl/3me/over/afdelingen/biomechanical-engineering"
+    img = "img/tudelft_logo.svg"
+    alt = "TU Delft Biomechanical Engineering Logo"
+
+  [[params.sponsors]]
+    url = "https://www.openscience.nl/"
+    img = "img/osnl_logo.svg"
+    alt = "Open Science Netherlands Logo"
+
+[[menu.main]]
+  identifier = "documentation"
+  name = "Documentation"
+  weight = 2
+  url  = "https://docs.opynsim.eu"
+  pre = '<i class="bi bi-book"></i>'
+
+[[menu.main]]
+  identifier = "pragmatic-msm"
+  name = "Pragmatic MSM Guide"
+  weight = 3
+  url  = "https://pragmatic.opynsim.eu"
+  pre = '<i class="bi bi-journal-bookmark"></i>'

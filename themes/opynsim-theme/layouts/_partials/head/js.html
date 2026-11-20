@@ -1,0 +1,25 @@
+{{- with resources.Get "js/bootstrap.bundle.min.js" }}
+  {{- $bs := . }}
+  {{- if not hugo.IsDevelopment }}
+    {{- $bs = $bs | fingerprint }}
+  {{- end }}
+  <script src="{{ $bs.RelPermalink }}"
+    {{- with $bs.Data.Integrity }} integrity="{{ . }}" crossorigin="anonymous"{{- end }} defer></script>
+{{- end }}
+
+{{- with resources.Get "js/opynsim-theme.js" }}
+  {{- $opts := dict
+    "minify" (not hugo.IsDevelopment)
+    "sourceMap" (cond hugo.IsDevelopment "inline" "none")
+    "targetPath" "js/opynsim-theme.js"
+  }}
+  {{- with . | js.Build $opts }}
+    {{- if hugo.IsDevelopment }}
+      <script src="{{ .RelPermalink }}" defer></script>
+    {{- else }}
+      {{- with . | fingerprint }}
+        <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}

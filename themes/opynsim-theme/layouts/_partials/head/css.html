@@ -1,0 +1,11 @@
+{{- with resources.Get "scss/opynsim-theme.scss" }}
+  {{- $opts := dict "targetPath" "css/opynsim-theme.css" }}
+  {{- $style := . | css.Sass $opts }}
+  {{- if not hugo.IsDevelopment }}
+    {{- $style = $style | minify | fingerprint }}
+  {{- end }}
+  <link
+      rel="stylesheet"
+      href="{{ $style.RelPermalink }}"
+      {{- with $style.Data.Integrity }} integrity="{{ . }}" crossorigin="anonymous"{{- end }}>
+{{- end }}

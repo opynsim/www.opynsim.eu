@@ -1,0 +1,37 @@
+<!-- footer -->
+<footer class="pt-3 mt-4 text-muted border-top">
+    <div class="container">
+        <div class="row">
+            {{- $lhsClass := "col-12" }}
+            {{- with .Site.Params.sponsors }}
+                {{- $lhsClass = "col-md-9" }}
+            {{- end }}
+            <div class="{{ $lhsClass }}">
+                <p>
+                    {{ .Site.Params.copyright_string }}
+                </p>
+                <p>
+                    {{ .Site.Params.footer_string | safeHTML }}
+                </p>
+                {{- with .Site.Params.admin_url }}
+                    <p class="small mb-0">
+                        <a href="{{ . }}" class="link-secondary text-decoration-none opacity-75">Administation</a>
+                    </p>
+                {{- end }}
+            </div>
+            {{- with .Site.Params.sponsors}}
+                <div class="col-md-3 d-flex flex-wrap justify-content-evenly align-items-center gap-1">
+                    {{- range $.Site.Params.sponsors }}
+                        {{- $sponsor := . }}
+                        {{- with resources.Get .img }}
+                            <a href="{{ $sponsor.url }}">
+                                <img src="{{ .RelPermalink }}" alt="{{ $sponsor.alt }}" style="height: 4em;" />
+                            </a>
+                        {{- end }}
+                    {{- end }}
+                </div>
+            {{- end}}
+        </div>
+        <br />
+    </div>
+</footer>
