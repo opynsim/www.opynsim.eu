@@ -1,0 +1,68 @@
+{{ define "main" }}
+<div class="container flex-fill d-flex flex-column justify-content-center align-items-center text-center py-5">
+  {{ with resources.Get "img/opynsim_banner_horizontal.svg" }}
+    <div class="row mb-4">
+      <img src="{{ .RelPermalink }}" alt="OPynSim Banner" class="img-fluid">
+    </div>
+  {{ end }}
+
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-muted small">
+      <p>
+        OPynSim brings native <a href="https://opensim.stanford.edu/">OpenSim</a>-powered
+        biomechanical simulation and visualization directly into a Python
+        API that fits with the rest of your Python environment. It lets you move
+        from model inspection/analysis to solvers and visualizers in a few
+        lines of code (<code>pip install opynsim</code>).
+      </p>
+      <p>
+        <b>Currently under construction 🚧.</b> The API is expected to
+        stabilize late-2027. It's currently <i>mostly</i> stable: you
+        can install and use it already, but there may be some minor changes
+        as we build it.
+      </p>
+    </div>
+  </div>
+
+  <div class="d-flex flex-wrap justify-content-center gap-2">
+    <a href="{{ .Site.Params.download_url }}" class="btn btn-primary">
+        <i class="bi bi-download"></i> Download
+    </a>
+    <a href="https://docs.opynsim.eu/" class="btn btn-outline-secondary">
+        <i class="bi bi-book"></i> Docs
+    </a>
+    <a href="{{ .Site.Params.github_url }}" class="btn btn-outline-secondary">
+        <i class="bi bi-github"></i> GitHub
+    </a>
+  </div>
+
+  <hr class="w-25 mx-auto my-4">
+
+  {{ with resources.Get "img/pragmatic_banner_horizontal.svg" }}
+    <div class="row mb-4">
+      <img src="{{ .RelPermalink }}" alt="Pragmatic OPynSim Banner" class="img-fluid">
+    </div>
+  {{ end }}
+
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-muted small">
+      <p>
+      The OPynSim project also develops the <a href="https://pragmatic.opynsim.eu">Pragmatic Musculoskeletal Modelling</a> handbook, which is an <a href="https://en.wikipedia.org/wiki/Open_education">open education</a> resource for learning the wider Python
+      musculoskeletal modelling ecosystem.
+      </p>
+      <p>
+        <b>Currently under construction 🚧.</b> The content's already useful
+        for small training seminars (we use it internally) but some guides
+        are not fully written. We're also looking for other Python project
+        developers that can contribute to the guide!
+      </p>
+    </div>
+  </div>
+
+  <div class="d-flex flex-wrap justify-content-center gap-2">
+    <a href="https://pragmatic.opynsim.eu" class="btn btn-outline-secondary">
+        <i class="bi bi-journal-bookmark"></i> Browse
+    </a>
+  </div>
+</div>
+{{ end }}

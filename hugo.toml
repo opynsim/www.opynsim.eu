@@ -8,8 +8,9 @@ defaultcontentlanguage = "en"
 pagerSize = 20
 
 [params]
+  favicon = "img/opynsim_logo.svg"
 #  banner_title = "OPynSim"
-  banner_icon = "img/opynsim_logo.svg"
+  banner_icon = "img/opynsim_horizontal_oneline.svg"
   github_url = "https://github.com/opynsim/opynsim"
   download_url = "https://docs.opynsim.eu/manual/en/latest/getting-started/installation.html"
   admin_url = "https://github.com/opynsim/opynsim-administration"
