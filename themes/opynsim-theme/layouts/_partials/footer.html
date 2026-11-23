@@ -13,11 +13,14 @@
                 <p>
                     {{ .Site.Params.footer_string | safeHTML }}
                 </p>
+                <p class="small mb-0">
                 {{- with .Site.Params.admin_url }}
-                    <p class="small mb-0">
-                        <a href="{{ . }}" class="link-secondary text-decoration-none opacity-75">Administation</a>
-                    </p>
+                  <a href="{{ . }}" class="link-secondary text-decoration-none opacity-75">Administation</a>
                 {{- end }}
+                {{- with .Site.Params.site_source_url }}
+                  <a href="{{ . }}" class="link-secondary text-decoration-none opacity-75">| Source Code</a>
+                {{- end}}
+                </p>
             </div>
             {{- with .Site.Params.sponsors}}
                 <div class="col-md-3 d-flex flex-wrap justify-content-evenly align-items-center gap-1">
